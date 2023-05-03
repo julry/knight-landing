@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'TriodPostnaja';
+    src: local('TriodPostnaja'), local('Triod Postnaja'),
+    url('./assets/fonts/TriodPostnaja/TriodPostnaja.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

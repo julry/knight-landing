@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import { useScreenInit } from './hooks/useScreenInit';
+import { ScreenProvider } from './context/ScreenContext';
+
+const Wrapper = styled.div`
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  white-space: pre-line;
+`;
 
 function App() {
+  const progress = useScreenInit();
+  const { screen } = progress;
+
+  const Component = screen?.component || (() => null);
+
+  // useEffect(() => {
+  //   // const preloadImages = screen?.preloadImages;
+  //   // const clears = preloadImages && preloadImages.map(img => preloadImage(img));
+  //   // return () => clears && clears.forEach(clear => clear());
+  // }, [screen]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <ScreenProvider value={progress}>
+        <Wrapper>
+          <Component />
+        </Wrapper>
+      </ScreenProvider>
+  )
 }
 
 export default App;
