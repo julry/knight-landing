@@ -37,13 +37,9 @@ export const BowlScreen = () => {
         btnText: 'За дело!'
     };
 
-    const handleChangeState = () => {
-        setIsBlurred(false);
-    };
-
     const handleFindBowl = () => {
         setIsFinished(true);
-        handleChangeState();
+        setIsBlurred(true);
     };
 
     return (
@@ -51,7 +47,7 @@ export const BowlScreen = () => {
             isFinished={isFinished}
             initialState={initialState}
             finalState={finalState}
-            onChangeState={handleChangeState}
+            onChangeState={() => setIsBlurred(false)}
         >
             <Wrapper isBlurred={isBlurred}>
                 <BowlGame onClick={handleFindBowl}/>
