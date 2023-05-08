@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "./static/css/main.ed8c2a4c.css",
+    "main.js": "./static/js/main.9b804e64.js",
+    "static/media/fullPuzzleBoard.svg": "./static/media/fullPuzzleBoard.6738f85d55fa8892d4e3ce5ed9715799.svg",
+    "static/media/rightBotPuzzle.svg": "./static/media/rightBotPuzzle.39a2f098c4f9b1ca88c00184ee9c7a02.svg",
+    "static/media/backgroundIntro.png": "./static/media/backgroundIntro.7009914c915c9cca9bc6.png",
+    "static/media/formImage.svg": "./static/media/formImage.152143bea785f02465316d0fb2da7fcf.svg",
+    "static/media/TriodPostnaja.ttf": "./static/media/TriodPostnaja.9346782f40a4754df5cb.ttf",
+    "static/media/rightTopPuzzle.svg": "./static/media/rightTopPuzzle.c06d79ff2ed075e21ae1eaf2209a40d5.svg",
+    "static/media/leftBotPuzzle.svg": "./static/media/leftBotPuzzle.c4ff9d39b0e5ffd51cd62d96dd0a04a0.svg",
+    "static/media/leftTopPuzzle.svg": "./static/media/leftTopPuzzle.d9d6ba1591eaff636877643474fb81a3.svg",
+    "static/media/chooseScreenImg.svg": "./static/media/chooseScreenImg.7a769de1e2cb969b71c1fe02474dd263.svg",
+    "static/media/shield.svg": "./static/media/shield.7da98534fdfdc4a66f1d5bf7fbbc6f8b.svg",
+    "static/media/emptyPuzzleBoard.svg": "./static/media/emptyPuzzleBoard.2804dd0838b6f042b2d94986de069813.svg",
+    "static/media/swordGameBg.png": "./static/media/swordGameBg.58cd13b7de555738e69e.png",
+    "static/media/modalBg.svg": "./static/media/modalBg.6981ac6b5923def5c607eff9ebb9e53c.svg",
+    "static/media/buttonLBgLight.svg": "./static/media/buttonLBgLight.f27e70f53d1b6a773cde6c05e0e1cacf.svg",
+    "static/media/buttonLBg.svg": "./static/media/buttonLBg.121407ba3020df1229e98281554e8082.svg",
+    "static/media/buttonModal.svg": "./static/media/buttonModal.12bf8c994c8517a44faffc82502fd4eb.svg",
+    "static/media/buttonLgGray.svg": "./static/media/buttonLgGray.04bf205d51b3e689193611fcde5a2597.svg",
+    "static/media/bricks.svg": "./static/media/bricks.c59778cfdabbe6f0178a0df31914206a.svg",
+    "static/media/formBg.svg": "./static/media/formBg.cb90e8cfafeef5f7702aacb4ae0fd9b7.svg",
+    "static/media/scrollIntro.svg": "./static/media/scrollIntro.21862144b2f29df50fbd19a963e8836d.svg",
+    "static/media/logo.svg": "./static/media/logo.a9668715c8a41f6a9f6ed648214e5934.svg",
+    "static/media/gameProgressElement.svg": "./static/media/gameProgressElement.e427085fcba2e61a5156fbe99ca55eff.svg",
+    "static/media/bowl.svg": "./static/media/bowl.00fb8832d4aa39e2a6fe7ecb2b090642.svg",
+    "static/media/fingerDown.svg": "./static/media/fingerDown.00e47e6cdd4b112944df4461dbeebfbd.svg",
+    "static/media/gameProgressBg.svg": "./static/media/gameProgressBg.8ef29d1e746e86bc0fb4f265d8e16acc.svg",
+    "static/media/paperIntro.svg": "./static/media/paperIntro.f90b596975bb0c608059f4262da1d39b.svg",
+    "index.html": "./index.html",
+    "main.ed8c2a4c.css.map": "./static/css/main.ed8c2a4c.css.map",
+    "main.9b804e64.js.map": "./static/js/main.9b804e64.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed8c2a4c.css",
+    "static/js/main.9b804e64.js"
+  ]
+}
