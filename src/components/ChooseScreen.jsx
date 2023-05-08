@@ -4,6 +4,7 @@ import background from '../assets/images/chooseScreenImg.svg';
 import { Button } from './shared/Button';
 import { useScreen } from '../hooks/useScreen';
 import { ItalicText } from './shared/Text';
+import { useEffect, useRef } from 'react';
 
 const Wrapper = styled.div`
   padding-top: 116px;
@@ -30,9 +31,13 @@ const ButtonStyled = styled(Button)`
   margin-bottom: 20px;
 `;
 
-
 export const ChooseScreen = () => {
     const { next } = useScreen();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Wrapper>
             <Content>
