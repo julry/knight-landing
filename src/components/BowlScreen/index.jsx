@@ -38,7 +38,7 @@ export const BowlScreen = () => {
     };
 
     const handleChangeState = () => {
-        setIsBlurred(blurred => !blurred);
+        setIsBlurred(false);
     };
 
     const handleFindBowl = () => {
