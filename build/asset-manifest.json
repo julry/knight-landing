@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ed8c2a4c.css",
-    "main.js": "./static/js/main.16187d5b.js",
+    "main.js": "./static/js/main.237cc996.js",
     "static/media/fullPuzzleBoard.svg": "./static/media/fullPuzzleBoard.6738f85d55fa8892d4e3ce5ed9715799.svg",
     "static/media/rightBotPuzzle.svg": "./static/media/rightBotPuzzle.39a2f098c4f9b1ca88c00184ee9c7a02.svg",
     "static/media/backgroundIntro.png": "./static/media/backgroundIntro.7009914c915c9cca9bc6.png",
@@ -20,20 +20,22 @@
     "static/media/buttonModal.svg": "./static/media/buttonModal.12bf8c994c8517a44faffc82502fd4eb.svg",
     "static/media/buttonLgGray.svg": "./static/media/buttonLgGray.04bf205d51b3e689193611fcde5a2597.svg",
     "static/media/bricks.svg": "./static/media/bricks.c59778cfdabbe6f0178a0df31914206a.svg",
+    "static/media/table.svg": "./static/media/table.42ee078fb045e9d2c16572816c059d81.svg",
     "static/media/formBg.svg": "./static/media/formBg.cb90e8cfafeef5f7702aacb4ae0fd9b7.svg",
     "static/media/scrollIntro.svg": "./static/media/scrollIntro.21862144b2f29df50fbd19a963e8836d.svg",
     "static/media/logo.svg": "./static/media/logo.a9668715c8a41f6a9f6ed648214e5934.svg",
     "static/media/gameProgressElement.svg": "./static/media/gameProgressElement.e427085fcba2e61a5156fbe99ca55eff.svg",
+    "static/media/qrBg.svg": "./static/media/qrBg.f4e328b1697742feea78a190e3a408a8.svg",
     "static/media/bowl.svg": "./static/media/bowl.00fb8832d4aa39e2a6fe7ecb2b090642.svg",
     "static/media/fingerDown.svg": "./static/media/fingerDown.00e47e6cdd4b112944df4461dbeebfbd.svg",
     "static/media/gameProgressBg.svg": "./static/media/gameProgressBg.8ef29d1e746e86bc0fb4f265d8e16acc.svg",
     "static/media/paperIntro.svg": "./static/media/paperIntro.f90b596975bb0c608059f4262da1d39b.svg",
     "index.html": "./index.html",
     "main.ed8c2a4c.css.map": "./static/css/main.ed8c2a4c.css.map",
-    "main.16187d5b.js.map": "./static/js/main.16187d5b.js.map"
+    "main.237cc996.js.map": "./static/js/main.237cc996.js.map"
   },
   "entrypoints": [
     "static/css/main.ed8c2a4c.css",
-    "static/js/main.16187d5b.js"
+    "static/js/main.237cc996.js"
   ]
 }
