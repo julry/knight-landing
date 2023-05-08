@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  filter: blur(${({isBlurred}) => isBlurred ? '10px' : 0});
+  filter: ${({isBlurred}) => isBlurred ? 'blur(10px)' : 'unset'};
 `;
 
 const opacityAnim = keyframes`

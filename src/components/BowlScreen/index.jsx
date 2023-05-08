@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: blur(${({isBlurred}) => isBlurred ? '10px' : 0});
+  filter: ${({isBlurred}) => isBlurred ? 'blur(10px)' : 'unset'};
 `;
 
 const BowlWrapper = styled.div`
