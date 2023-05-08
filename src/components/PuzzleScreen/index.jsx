@@ -10,6 +10,15 @@ import { GameScreen } from '../shared/GameScreen';
 import { usePuzzleGame } from './use-puzzle-game';
 import { useState } from 'react';
 
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: blur(${({isBlurred}) => isBlurred ? '10px' : 0});
+`;
+
 const opacityAnim = keyframes`
   0% {
     opacity: 0;
@@ -26,16 +35,6 @@ const ButtonStyled = styled(Button)`
   color: #513C3E;
   animation: ${opacityAnim} 0.3s ease-in forwards;
 `;
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  filter: blur(${({isBlurred}) => isBlurred ? '10px' : 0});
-`;
-
 
 export const PuzzleScreen = () => {
     const [isBlurred, setIsBlurred] = useState(true);

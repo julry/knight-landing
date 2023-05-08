@@ -13,6 +13,20 @@ const PuzzleBoardWrapper = styled.div`
   padding: 32px 34px;
   opacity: ${({isWin}) => isWin ? '0' : '1'};
   transition: opacity 1s ease-in;
+
+  @media screen and (max-width: 325px) {
+    width: calc(323px * 0.8);
+    height: calc(320px * 0.8);
+    padding: calc(32px * 0.8) calc(34px * 0.8);
+    background-size: contain;
+  }
+
+  @media screen and (min-width: 600px) {
+    width: calc(323px * 1.3);
+    height: calc(320px * 1.3);
+    padding: calc(32px * 1.3) calc(34px * 1.3);
+    background-size: contain;
+  }
 `;
 
 const WinBoard = styled(PuzzleBoardWrapper)`
@@ -31,7 +45,13 @@ const PuzzleBoardRow = styled.div`
   display: flex;
   height: 128px;
   width: 100%;
-  
+  @media screen and (max-width: 325px) {
+    height: calc(128px * 0.8);
+  }
+
+  @media screen and (min-width: 600px) {
+    height: calc(128px * 1.3);
+  }
 `;
 
 export const Board = (props) => {

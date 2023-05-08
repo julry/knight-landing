@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import formBg from '../../assets/images/formBg.svg';
 import { Button } from '../shared/Button';
 import btnBg from '../../assets/images/buttonLgGray.svg';
+import {Text} from '../shared/Text';
 
 const Wrapper = styled.div`
   position: relative;
   z-index: 2;
   padding: 77px 45px 62px 53px;
-  background: url(${formBg}) center no-repeat;
+  background: url(${formBg}) center 0 no-repeat;
   background-size: contain;
   min-height: 661px;
   margin: 0 18px;
@@ -17,6 +18,12 @@ const Wrapper = styled.div`
   
   @media screen and (min-width: 400px) {
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 330px) {
+    background-size: cover;
+    padding-left: 35px;
+    padding-right: 20px;
   }
 `;
 
@@ -34,6 +41,10 @@ const InputLabel = styled.p`
   color: #513C3E;
   margin-bottom: 10px;
   text-align: left;
+  
+  @media screen and (max-width: 325px) {
+    font-size: 15px;
+  }
 `;
 
 const Input = styled.input`
@@ -88,8 +99,7 @@ const RadioButtonLabel = styled.label`
   }
 `;
 
-const TextStyled = styled.p`
-  font-size: 15px;
+const TextStyled = styled(Text)`
   line-height: 120%;
   color: #513C3E;
 `;

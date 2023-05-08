@@ -17,7 +17,7 @@ const StyledPuzzlePreview = styled(PuzzleStyled)`
 `;
 
 export const Puzzle = (props) => {
-    const {puzzle, isWin, onDragStart} = props;
+    const {puzzle = {}, isWin, onDragStart} = props;
     const {id, position, styles} = puzzle;
     const dragRef = useRef();
 

@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 function App() {
   const progress = useScreenInit();
-  const { screen, blockScroll } = progress;
+  const { screen } = progress;
 
   const Component = screen?.component || (() => null);
 

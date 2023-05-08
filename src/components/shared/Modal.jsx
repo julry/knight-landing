@@ -38,6 +38,15 @@ const TextStyled = styled(Title)`
   line-height: 120%;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 325px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 310px) {
+    line-height: 110%;
+    margin-bottom: 10px;
+  }
 `;
 
 const ButtonStyled = styled(Button)`

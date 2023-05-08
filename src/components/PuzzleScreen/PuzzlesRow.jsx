@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   flex-grow: 1;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 600px;
 `;
 
 const PuzzleWrapper = styled.div`
