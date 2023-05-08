@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 import { useScreenInit } from './hooks/useScreenInit';
 import { ScreenProvider } from './context/ScreenContext';
 import { preloadImage } from './utils/preloadImage';
+import { QrScreen } from './components/QrScreen';
 
 const Wrapper = styled.div`
   background-size: cover;
@@ -28,7 +30,7 @@ function App() {
   return (
       <ScreenProvider value={progress}>
         <Wrapper>
-          <Component />
+            {isMobile ? <Component /> : <QrScreen />}
         </Wrapper>
       </ScreenProvider>
   )
