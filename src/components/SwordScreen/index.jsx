@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { GameScreen } from './shared/GameScreen';
-import progressBg from '../assets/images/gameProgressBg.svg';
-import elementBg from '../assets/images/gameProgressElement.svg';
+import { GameScreen } from '../shared/GameScreen';
+import progressBg from '../../assets/images/gameProgressBg.svg';
+import elementBg from '../../assets/images/gameProgressElement.svg';
+import background from '../../assets/images/swordGameBg.png';
+import { SwordRock } from './SwordRock';
+import { FINAL_COUNT } from './sword-screen-constants';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -11,6 +14,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(${background}) center no-repeat;
+  background-size: cover;
 `;
 
 const Progress = styled.div`
@@ -31,10 +36,17 @@ const Progress = styled.div`
   }
 `;
 
+const SwordRockStyled = styled(SwordRock)`
+  margin-top: auto;
+`;
+
 const Element = styled.div`
+  --position: calc((14 / 319) * 100%);
+  --step: calc((100% - (2 * var(--position)) - 25px) / 6);
+
   position: absolute;
   top: -2px;
-  left: ${({left}) => left + 'px'};
+  left: calc(var(--position) + ${({count}) => count}*var(--step));
   width: 25px;
   height: 36px;
   background: url(${elementBg}) center no-repeat;
@@ -50,17 +62,10 @@ const Element = styled.div`
   }
 `;
 
-const FINAL_COUNT = 5;
-
 export const SwordScreen = () => {
     const [isFinished, setIsFinished] = useState(false);
-    const [isBlurred, setIsBlurred] = useState(false);
-    const [position, setPosition] = useState(0);
-    const [step, setStep] = useState(0);
+    const [isBlurred, setIsBlurred] = useState(true);
     const [count, setCount] = useState(0);
-
-    const $progressRef = useRef(null);
-    const $elementRef = useRef(null);
 
     const initialState = {
         text: 'Кликай по камню,\nчтобы расколоть его\nи вытащить меч',
@@ -75,27 +80,21 @@ export const SwordScreen = () => {
         setIsBlurred(blurred => !blurred);
     };
 
-    useEffect(() => {
-        if ($progressRef?.current && $elementRef?.current) {
-            const position = (14 / 319) * $progressRef.current.clientWidth;
-            setStep(($progressRef.current.clientWidth - (2 * position) - $elementRef?.current.clientWidth) / 6);
-            setPosition(position);
-        }
-    }, [$progressRef?.current, $elementRef?.current]);
+    const getStage = useCallback(() => Math.floor(count / 2), [count]);
 
     const onClick = () => {
-        if (count > FINAL_COUNT) return;
+        if (count >= FINAL_COUNT) return;
         setCount(prevCount => ++prevCount);
-        setPosition(prevPos => prevPos + step);
     }
 
     useEffect(() => {
-        if (count > FINAL_COUNT) {
+        if (count >= FINAL_COUNT) {
             setTimeout(() => {
+                setIsBlurred(true);
                 setIsFinished(true);
-            }, 250);
+            }, 650);
         }
-    }, [count])
+    }, [count]);
 
     return (
         <GameScreen
@@ -104,10 +103,11 @@ export const SwordScreen = () => {
             finalState={finalState}
             onChangeState={handleChangeState}
         >
-            <Wrapper isBlurred={isBlurred} onClick={onClick}>
-                <Progress ref={$progressRef}>
-                    <Element ref={$elementRef} left={position}/>
+            <Wrapper isBlurred={isBlurred}>
+                <Progress>
+                    <Element count={count}/>
                 </Progress>
+                <SwordRockStyled onClick={onClick} stage={getStage()}/>
             </Wrapper>
         </GameScreen>
     )

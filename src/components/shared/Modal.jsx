@@ -15,12 +15,14 @@ const Backdrop = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 88.8vw;
   height: 62.933vw;
+  max-width: 500px;
+  max-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,13 +47,19 @@ const ButtonStyled = styled(Button)`
   color: #513C3E;
 `;
 
-export const Modal = ({text, btnText, onClick}) => {
+const Content = styled.div`
+    margin: auto;
+`;
+
+export const Modal = ({text, btnText, onClick, onClose}) => {
     return (
         <>
-            <Backdrop />
+            <Backdrop onClick={onClose}/>
             <ModalWrapper>
-                <TextStyled>{text}</TextStyled>
-                <ButtonStyled onClick={onClick}>{btnText}</ButtonStyled>
+                <Content>
+                    <TextStyled>{text}</TextStyled>
+                    {btnText && <ButtonStyled onClick={onClick}>{btnText}</ButtonStyled>}
+                </Content>
             </ModalWrapper>
         </>
     )

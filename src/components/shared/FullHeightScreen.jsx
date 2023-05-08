@@ -25,7 +25,7 @@ export const FullHeightScreen = (props) => {
     }, []);
 
     return (
-        <Wrapper styles={{ height }}>
+        <Wrapper className={props.className} styles={{ height }}>
             {props.children}
         </Wrapper>
     )

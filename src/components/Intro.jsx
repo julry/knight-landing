@@ -4,10 +4,13 @@ import background from '../assets/images/backgroundIntro.png';
 import scroll from '../assets/images/scrollIntro.svg';
 import paper from '../assets/images/paperIntro.svg';
 import btnBg from '../assets/images/buttonLBgLight.svg';
+import finger from '../assets/images/fingerDown.svg';
 import { Button } from './shared/Button';
 import { useScreen } from '../hooks/useScreen';
 import { Title } from './shared/Title';
-import { Text } from './shared/Text';
+import { ItalicText, Text } from './shared/Text';
+import { useEffect, useState } from 'react';
+import { Modal } from './shared/Modal';
 
 const Wrapper = styled.div`
   display: flex;
@@ -106,8 +109,31 @@ const ButtonStyled = styled(Button)`
   background-image: url(${btnBg});
 `;
 
+const FingerIcon = styled.div`
+  background: url(${finger}) no-repeat center;
+  margin: 20px auto 10px;
+  width: 13px;
+  height: 19px;
+`;
+
+
 export const Intro = () => {
+    const [isModal, setIsModal] = useState(false);
     const { next } = useScreen();
+
+    useEffect(() => {
+        if (isModal) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const handleScroll = () => {
+                window.scrollTo(0, scrollTop);
+            };
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
+    }, [isModal]);
+
     return (
         <Wrapper>
             <InfoWrapper>
@@ -124,6 +150,8 @@ export const Intro = () => {
                         'лучших специалистов в компании.'
                     }
                 </TextStyled>
+                <FingerIcon />
+                <ItalicText>Листай вниз</ItalicText>
             </BackgroundWrapper>
             <ScrollWrapper>
                 <ScrollText>
@@ -149,10 +177,19 @@ export const Intro = () => {
                     }
                 </Question>
                 <ButtonWrapper>
-                    <ButtonStyled onClick={next}>Винчестер, Англия</ButtonStyled>
+                    <ButtonStyled onClick={() => setIsModal(true)}>Винчестер, Англия</ButtonStyled>
                     <Button onClick={next}>ЭФ МГУ, Москва</Button>
                 </ButtonWrapper>
             </PaperWrapper>
+            {isModal && (
+                <Modal
+                    onClose={() => setIsModal(false)}
+                    text={
+                        'Забавно получилось — \nв Англию из этой игры\nпопасть нельзя.\n' +
+                        'Попробуй другую кнопку'
+                    }
+                />
+            )}
         </Wrapper>
-    )
-}
+    );
+};
