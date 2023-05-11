@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { Title } from './shared/Title';
 import background from '../assets/images/chooseScreenImg.svg';
-import { Button } from './shared/Button';
+import { openTg } from '../utils/openTg';
 import { useScreen } from '../hooks/useScreen';
+import { Button } from './shared/Button';
 import { ItalicText } from './shared/Text';
 import { FullHeightScreen } from './shared/FullHeightScreen';
 
@@ -44,7 +45,7 @@ export const ChooseScreen = () => {
                 <TitleStyled>
                     {'Ты можешь\nостановиться тут\nили продолжить\nсвой путь.'}
                 </TitleStyled>
-                <ButtonStyled>Остановиться</ButtonStyled>
+                <ButtonStyled onClick={openTg}>Остановиться</ButtonStyled>
                 <ButtonStyled onClick={next}>Продолжить путь</ButtonStyled>
                 <ItalicText>{'*чтобы найти послание\nот организаторов Круглого стола'}</ItalicText>
             </Content>

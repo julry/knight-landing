@@ -4,10 +4,11 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { MouseTransition, DndProvider, TouchTransition } from 'react-dnd-multi-backend';
 import btnBg from '../../assets/images/buttonLgGray.svg';
-import { PuzzlesRow } from './PuzzlesRow';
-import { Board } from './Board';
+import { openTg } from '../../utils/openTg';
 import { Button } from '../shared/Button';
 import { GameScreen } from '../shared/GameScreen';
+import { PuzzlesRow } from './PuzzlesRow';
+import { Board } from './Board';
 import { usePuzzleGame } from './use-puzzle-game';
 
 const Wrapper = styled.div`
@@ -79,7 +80,7 @@ export const PuzzleScreen = () => {
                         onPuzzleDrop={onDrop}
                         droppedPuzzles={droppedPuzzles}
                     />
-                    {isWin ? <ButtonStyled>Завершить</ButtonStyled>
+                    {isWin ? <ButtonStyled onClick={openTg}>Завершить</ButtonStyled>
                         : <PuzzlesRow
                             shownPuzzles={shownPuzzles}
                             onDrop={onRemove}
