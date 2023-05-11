@@ -56,6 +56,7 @@ const PuzzleBoardRow = styled.div`
 
 export const Board = (props) => {
     const {onPuzzleDrop, droppedPuzzles, isWin, puzzles = []} = props;
+
     return (
         <>
             <PuzzleBoardWrapper className={props.className} isWin={isWin}>
@@ -74,7 +75,7 @@ export const Board = (props) => {
                     </PuzzleBoardRow>
                 ))}
             </PuzzleBoardWrapper>
-            <WinBoard  isWin={isWin}/>
+            <WinBoard isWin={isWin}/>
         </>
-);
+    );
 };

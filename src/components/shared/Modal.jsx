@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { Title } from './Title';
-import { Button } from './Button';
 import buttonBg from '../../assets/images/buttonModal.svg';
 import bg from '../../assets/images/modalBg.svg';
+import closeIcon from '../../assets/images/closeIcon.svg';
+import { Title } from './Title';
+import { Button } from './Button';
 
 const Backdrop = styled.div`
   position: absolute;
@@ -60,16 +61,26 @@ const Content = styled.div`
     margin: auto;
 `;
 
+const CloseBtn = styled.div`
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  background: url(${closeIcon}); 
+  width: 16px;
+  height: 16px;
+`;
+
 export const Modal = ({text, btnText, onClick, onClose}) => {
     return (
         <>
             <Backdrop onClick={onClose}/>
             <ModalWrapper>
                 <Content>
+                    {onClose && <CloseBtn onClick={onClose}/>}
                     <TextStyled>{text}</TextStyled>
                     {btnText && <ButtonStyled onClick={onClick}>{btnText}</ButtonStyled>}
                 </Content>
             </ModalWrapper>
         </>
-    )
-}
+    );
+};

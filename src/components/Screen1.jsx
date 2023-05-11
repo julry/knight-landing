@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import bricks from '../assets/images/bricks.svg';
 import shield from '../assets/images/shield.svg';
+import { useScreen } from '../hooks/useScreen';
 import { FullHeightScreen } from './shared/FullHeightScreen';
 import { Title } from './shared/Title';
 import { Text } from './shared/Text';
 import { Button } from './shared/Button';
-import { useScreen } from '../hooks/useScreen';
 
 const BricksWrapper = styled.div`
   position: absolute;
@@ -51,12 +51,13 @@ const TitleStyled = styled(Title)`
 `;
 
 export const Screen1 = () => {
-    const { next } = useScreen();
+    const {next} = useScreen();
+
     return (
         <FullHeightScreen>
-            <BricksWrapper />
+            <BricksWrapper/>
             <Content>
-                <ShieldWrapper />
+                <ShieldWrapper/>
                 <Description>
                     <TitleStyled>Правильный выбор!</TitleStyled>
                     <Text>
@@ -70,5 +71,5 @@ export const Screen1 = () => {
                 <Button onClick={next}>К первому испытанию!</Button>
             </Content>
         </FullHeightScreen>
-    )
-}
+    );
+};

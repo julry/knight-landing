@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  ${({ styles }) => styles};
+  ${({styles}) => styles};
   position: relative;
   overflow: hidden;
 `;
@@ -15,6 +15,7 @@ export const FullHeightScreen = (props) => {
             const viewportHeight = document.documentElement.clientHeight;
             setHeight(viewportHeight + 'px');
         }
+
         handleResize();
 
         window.addEventListener('resize', handleResize);
@@ -25,8 +26,8 @@ export const FullHeightScreen = (props) => {
     }, []);
 
     return (
-        <Wrapper className={props.className} styles={{ height }}>
+        <Wrapper className={props.className} styles={{height}}>
             {props.children}
         </Wrapper>
-    )
-}
+    );
+};

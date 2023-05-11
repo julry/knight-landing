@@ -1,7 +1,7 @@
-import { Modal } from './Modal';
-import { FullHeightScreen } from './FullHeightScreen';
 import { useEffect, useState } from 'react';
 import { useScreen } from '../../hooks/useScreen';
+import { Modal } from './Modal';
+import { FullHeightScreen } from './FullHeightScreen';
 
 export const GameScreen = ({initialState, finalState, children, onChangeState, isFinished, className}) => {
     const [modalState, setModalState] = useState({open: true, ...initialState});
@@ -10,7 +10,7 @@ export const GameScreen = ({initialState, finalState, children, onChangeState, i
     const onStart = () => {
         setModalState({open: false});
         onChangeState?.();
-    }
+    };
 
     useEffect(() => {
         if (!isFinished) return;
@@ -32,5 +32,5 @@ export const GameScreen = ({initialState, finalState, children, onChangeState, i
                 <Modal text={modalState.text} btnText={modalState.btnText} onClick={handleClick}/>
             )}
         </FullHeightScreen>
-    )
-}
+    );
+};

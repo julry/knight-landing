@@ -1,22 +1,22 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
 import { Title } from './shared/Title';
 import background from '../assets/images/chooseScreenImg.svg';
 import { Button } from './shared/Button';
 import { useScreen } from '../hooks/useScreen';
 import { ItalicText } from './shared/Text';
-import { useEffect, useRef } from 'react';
+import { FullHeightScreen } from './shared/FullHeightScreen';
 
-const Wrapper = styled.div`
-  padding-top: 116px;
-  width: 100%;
+const Wrapper = styled(FullHeightScreen)`
+  padding-top: 10px;
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 962px;
   width: 100%;
+  height: 100%;
   padding-top: 84px;
   background: url(${background}) no-repeat center;
   background-size: cover;
@@ -32,7 +32,7 @@ const ButtonStyled = styled(Button)`
 `;
 
 export const ChooseScreen = () => {
-    const { next } = useScreen();
+    const {next} = useScreen();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -46,8 +46,8 @@ export const ChooseScreen = () => {
                 </TitleStyled>
                 <ButtonStyled>Остановиться</ButtonStyled>
                 <ButtonStyled onClick={next}>Продолжить путь</ButtonStyled>
-                <ItalicText>{'Чтобы найти послание\nот организаторов Круглого стола'}</ItalicText>
+                <ItalicText>{'*чтобы найти послание\nот организаторов Круглого стола'}</ItalicText>
             </Content>
         </Wrapper>
-    )
-}
+    );
+};

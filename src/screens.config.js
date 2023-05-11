@@ -47,4 +47,4 @@ export const screens = [
         component: PuzzleScreen,
         preloadImages: [],
     },
-]
+];

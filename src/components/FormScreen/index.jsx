@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import formImage from '../../assets/images/formImage.svg';
+import { useScreen } from '../../hooks/useScreen';
 import { Title } from '../shared/Title';
 import { sendForm } from './sendForm';
-import { useScreen } from '../../hooks/useScreen';
 import { Form } from './Form';
-import formImage from '../../assets/images/formImage.svg';
 
 const TitleStyled = styled(Title)`
   margin: 40px 0;

@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import QRCodeStyling from 'qr-code-styling';
-import { Title } from './shared/Title';
-import { Text } from './shared/Text';
 import background from '../assets/images/qrBg.svg';
 import table from '../assets/images/table.svg';
+import { Title } from './shared/Title';
+import { Text } from './shared/Text';
 
 const Wrapper = styled.div`
   width: 100%;

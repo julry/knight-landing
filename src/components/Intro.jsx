@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 0 58px;
+  filter: ${({isBlurred}) => isBlurred ? 'blur(10px) ' : 'unset'}
 `;
 
 const Logo = styled.div`
@@ -33,7 +34,7 @@ const InfoWrapper = styled.div`
 const TitleStyled = styled(Title)`
   font-size: 60px;
   line-height: 80%;
-  
+
   @media screen and (max-width: 350px) {
     font-size: 48px;
   }
@@ -50,11 +51,11 @@ const BackgroundWrapper = styled.div`
   height: 562px;
   background: url(${background}) no-repeat -446px 0;
   background-size: cover;
-  
+
   @media screen and (max-width: 350px) {
     height: 530px;
   }
-  
+
   @media screen and (min-width: 625px) {
     background-position-x: -5vw;
   }
@@ -90,7 +91,7 @@ const Question = styled(Title)`
   font-size: 35px;
   max-width: 328px;
   margin: 0 auto;
-  
+
   @media screen and (max-width: 350px) {
     font-size: 28px;
     max-width: 310px;
@@ -119,7 +120,7 @@ const FingerIcon = styled.div`
 
 export const Intro = () => {
     const [isModal, setIsModal] = useState(false);
-    const { next } = useScreen();
+    const {next} = useScreen();
 
     useEffect(() => {
         if (isModal) {
@@ -135,52 +136,54 @@ export const Intro = () => {
     }, [isModal]);
 
     return (
-        <Wrapper>
-            <InfoWrapper>
-                <Logo />
-                <TitleStyled>Здравствуй,{'\n'}странник!</TitleStyled>
-            </InfoWrapper>
-            <BackgroundWrapper>
-                <TextStyled>
-                    {
-                        'Сотни веков люди ищут магические артефакты. Одни даруют вечную жизнь, ' +
-                        'другие — управляют судьбой, третьи — указывают дорогу ' +
-                        'к несметным богатствам.\n\n' +
-                        'А мы ищем то, что хранит тайные знания о привлечении ' +
-                        'лучших специалистов в компании.'
-                    }
-                </TextStyled>
-                <FingerIcon />
-                <ItalicText>Листай вниз</ItalicText>
-            </BackgroundWrapper>
-            <ScrollWrapper>
-                <ScrollText>
-                    {
-                        'Поиски волшебного артефакта — это долгий и сложный путь. ' +
-                        'Пройти его в одиночку и без должной подготовки практически невозможно. ' +
-                        'Чтобы достичь успеха мы обратимся к давней традиции рыцарей, искавших Святой Грааль.' +
-                        '\n\n' +
-                        'Рыцари собирались\nза Круглым столом, чтобы обсудить поиски священного артефакта. ' +
-                        'Первым организатором был король Артур. Но это был лишь миф.' +
-                        '\n\n' +
-                        'В XIV веке король Эдуард III создал в Виндзорском замке первый настоящий ' +
-                        'Круглый стол: были приглашены представители элиты\nи устроен большой пир'
-                    }
-                </ScrollText>
-            </ScrollWrapper>
-            <PaperWrapper>
-                <Question>
-                    {
-                        'В наше время самые известные Круглые столы ' +
-                        'проводятся в Винчестере и на Экономическом факультете МГУ.\n' +
-                        'Куда направишься ты?'
-                    }
-                </Question>
-                <ButtonWrapper>
-                    <ButtonStyled onClick={() => setIsModal(true)}>Винчестер, Англия</ButtonStyled>
-                    <Button onClick={next}>ЭФ МГУ, Москва</Button>
-                </ButtonWrapper>
-            </PaperWrapper>
+        <>
+            <Wrapper isBlurred={isModal}>
+                <InfoWrapper>
+                    <Logo/>
+                    <TitleStyled>Здравствуй,{'\n'}странник!</TitleStyled>
+                </InfoWrapper>
+                <BackgroundWrapper>
+                    <TextStyled>
+                        {
+                            'Сотни веков люди ищут магические артефакты. Одни даруют вечную жизнь, ' +
+                            'другие — управляют судьбой, третьи — указывают дорогу ' +
+                            'к несметным богатствам.\n\n' +
+                            'А мы ищем то, что хранит тайные знания о привлечении ' +
+                            'лучших специалистов в компании.'
+                        }
+                    </TextStyled>
+                    <FingerIcon/>
+                    <ItalicText>Листай вниз</ItalicText>
+                </BackgroundWrapper>
+                <ScrollWrapper>
+                    <ScrollText>
+                        {
+                            'Поиски волшебного артефакта — это долгий и сложный путь. ' +
+                            'Пройти его в одиночку и без должной подготовки практически невозможно. ' +
+                            'Чтобы достичь успеха мы обратимся к давней традиции рыцарей, искавших Святой Грааль.' +
+                            '\n\n' +
+                            'Рыцари собирались\nза Круглым столом, чтобы обсудить поиски священного артефакта. ' +
+                            'Первым организатором был король Артур. Но это был лишь миф.' +
+                            '\n\n' +
+                            'В XIV веке король Эдуард III создал в Виндзорском замке первый настоящий ' +
+                            'Круглый стол: были приглашены представители элиты\nи устроен большой пир'
+                        }
+                    </ScrollText>
+                </ScrollWrapper>
+                <PaperWrapper>
+                    <Question>
+                        {
+                            'В наше время самые известные Круглые столы ' +
+                            'проводятся в Винчестере и на Экономическом факультете МГУ.\n' +
+                            'Куда направишься ты?'
+                        }
+                    </Question>
+                    <ButtonWrapper>
+                        <ButtonStyled onClick={() => setIsModal(true)}>Винчестер, Англия</ButtonStyled>
+                        <Button onClick={next}>ЭФ МГУ, Москва</Button>
+                    </ButtonWrapper>
+                </PaperWrapper>
+            </Wrapper>
             {isModal && (
                 <Modal
                     onClose={() => setIsModal(false)}
@@ -190,6 +193,6 @@ export const Intro = () => {
                     }
                 />
             )}
-        </Wrapper>
+        </>
     );
 };

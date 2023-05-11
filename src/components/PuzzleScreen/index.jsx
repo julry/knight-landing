@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -8,7 +9,6 @@ import { Board } from './Board';
 import { Button } from '../shared/Button';
 import { GameScreen } from '../shared/GameScreen';
 import { usePuzzleGame } from './use-puzzle-game';
-import { useState } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ const opacityAnim = keyframes`
 `;
 
 const ButtonStyled = styled(Button)`
-  margin-top: 30px; 
+  margin-top: 30px;
   background-image: url(${btnBg});
   opacity: 0;
   color: #513C3E;
@@ -89,4 +89,4 @@ export const PuzzleScreen = () => {
             </Wrapper>
         </GameScreen>
     );
-}
+};

@@ -118,4 +118,4 @@ export const usePuzzleGame = () => {
         shownPuzzles,
         onRemove,
     }
-}
+};

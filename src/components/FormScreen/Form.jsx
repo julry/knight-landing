@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import formBg from '../../assets/images/formBg.svg';
 import { Button } from '../shared/Button';
 import btnBg from '../../assets/images/buttonLgGray.svg';
-import {Text} from '../shared/Text';
+import { Text } from '../shared/Text';
 
 const Wrapper = styled.div`
   position: relative;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   min-height: 661px;
   margin: 0 18px;
   max-width: 380px;
-  
+
   @media screen and (min-width: 400px) {
     margin: 0 auto;
   }
@@ -41,7 +41,7 @@ const InputLabel = styled.p`
   color: #513C3E;
   margin-bottom: 10px;
   text-align: left;
-  
+
   @media screen and (max-width: 325px) {
     font-size: 15px;
   }
@@ -81,12 +81,12 @@ const RadioButtonLabel = styled.label`
   display: flex;
   align-items: center;
   cursor: pointer;
-  
+
   &:first-of-type {
     margin-top: 15px;
     margin-bottom: 10px;
   }
-  
+
   & ${InputRadioButton}:checked + ${RadioIconStyled}:after {
     content: '';
     position: absolute;
@@ -110,7 +110,7 @@ export const Form = ({onSubmit}) => {
     const [company, setCompany] = useState('');
     const [position, setPosition] = useState('');
     const [isParking, setIsParking] = useState(undefined);
-    const [opts, setOpts] = useState({ mask: '+{7} {(}000{)} 000-00-00' });
+    const [opts, setOpts] = useState({mask: '+{7} {(}000{)} 000-00-00'});
     const {ref, setValue} = useIMask(opts, {
         onAccept: (value) => setPhone(value),
     });
@@ -146,7 +146,7 @@ export const Form = ({onSubmit}) => {
             </InputLabel>
             <Input
                 name={'company'}
-                placeholder={"FutureToday"}
+                placeholder={'FutureToday'}
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
             />
@@ -155,7 +155,7 @@ export const Form = ({onSubmit}) => {
             </InputLabel>
             <Input
                 name={'position'}
-                placeholder={"Должность"}
+                placeholder={'Должность'}
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
             />
@@ -164,20 +164,20 @@ export const Form = ({onSubmit}) => {
             </InputLabel>
             <RadioButtonLabel>
                 <InputRadioButton
-                    type='radio'
+                    type="radio"
                     name={'isParking'}
                     onChange={() => setIsParking(true)}
                 />
-                <RadioIconStyled />
+                <RadioIconStyled/>
                 <TextStyled>Парковка нужна</TextStyled>
             </RadioButtonLabel>
             <RadioButtonLabel>
                 <InputRadioButton
-                    type='radio'
+                    type="radio"
                     name={'isParking'}
                     onChange={() => setIsParking(false)}
                 />
-                <RadioIconStyled />
+                <RadioIconStyled/>
                 <TextStyled>Парковка не нужна</TextStyled>
             </RadioButtonLabel>
             <ButtonStyled

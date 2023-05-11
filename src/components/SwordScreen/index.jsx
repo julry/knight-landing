@@ -25,7 +25,7 @@ const Progress = styled.div`
   width: 319px;
   background: url(${progressBg}) no-repeat center;
   background-size: contain;
-  
+
   @media screen and (max-width: 320px) {
     width: 250px;
   }
@@ -46,7 +46,7 @@ const Element = styled.div`
 
   position: absolute;
   top: -2px;
-  left: calc(var(--position) + ${({count}) => count}*var(--step));
+  left: calc(var(--position) + ${({count}) => count} * var(--step));
   width: 25px;
   height: 36px;
   background: url(${elementBg}) center no-repeat;
@@ -85,7 +85,7 @@ export const SwordScreen = () => {
     const onClick = () => {
         if (count >= FINAL_COUNT) return;
         setCount(prevCount => ++prevCount);
-    }
+    };
 
     useEffect(() => {
         if (count >= FINAL_COUNT) {
@@ -110,5 +110,5 @@ export const SwordScreen = () => {
                 <SwordRockStyled onClick={onClick} stage={getStage()}/>
             </Wrapper>
         </GameScreen>
-    )
-}
+    );
+};
