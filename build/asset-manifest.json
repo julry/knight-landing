@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ed8c2a4c.css",
-    "main.js": "./static/js/main.2dee4c7f.js",
+    "main.js": "./static/js/main.f981fc68.js",
     "static/media/fullPuzzleBoard.svg": "./static/media/fullPuzzleBoard.6738f85d55fa8892d4e3ce5ed9715799.svg",
     "static/media/rightBotPuzzle.svg": "./static/media/rightBotPuzzle.39a2f098c4f9b1ca88c00184ee9c7a02.svg",
     "static/media/backgroundIntro.png": "./static/media/backgroundIntro.7009914c915c9cca9bc6.png",
@@ -33,10 +33,10 @@
     "index.html": "./index.html",
     "static/media/closeIcon.svg": "./static/media/closeIcon.791d87585d85f9afb07bfed287371545.svg",
     "main.ed8c2a4c.css.map": "./static/css/main.ed8c2a4c.css.map",
-    "main.2dee4c7f.js.map": "./static/js/main.2dee4c7f.js.map"
+    "main.f981fc68.js.map": "./static/js/main.f981fc68.js.map"
   },
   "entrypoints": [
     "static/css/main.ed8c2a4c.css",
-    "static/js/main.2dee4c7f.js"
+    "static/js/main.f981fc68.js"
   ]
 }

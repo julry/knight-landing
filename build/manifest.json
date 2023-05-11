@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Круглый стол FutureToday",
+  "name": "Круглый стол FutureToday",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "favicon.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "100x100"
     },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#374A4B",
+  "background_color": "#182326"
 }
