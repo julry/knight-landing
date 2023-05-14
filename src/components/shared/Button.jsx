@@ -13,11 +13,7 @@ const ButtonStyled = styled.button`
   background: url(${background}) no-repeat center;
   background-size: contain;
   color: #374A4B;
-
-  &:disabled {
-    opacity: 0.6;
-  }
-
+  
   @media screen and (max-width: 310px) {
     width: 260px;
   }

@@ -41,8 +41,8 @@ const Image = styled.img`
 export const FormScreen = () => {
     const {next} = useScreen();
 
-    const onSubmit = async ({name, phone, company, position, isParking}) => {
-        await sendForm({name, phone, company, position, isParking});
+    const onSubmit = async ({name, phone, company, position, email, isParking}) => {
+        await sendForm({name, phone, company, position, email, isParking});
         next();
     };
 
