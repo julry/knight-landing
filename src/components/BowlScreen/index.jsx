@@ -3,6 +3,7 @@ import { BowlGame } from './BowlGame';
 import { GameScreen } from '../shared/GameScreen';
 import { useState } from 'react';
 import bowl from '../../assets/images/bowl.svg';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -42,12 +43,17 @@ export const BowlScreen = () => {
         setIsBlurred(true);
     };
 
+    const handleChangeState = () => {
+        reachMetrikaGoal('graal');
+        setIsBlurred(false);
+    };
+
     return (
         <GameScreen
             isFinished={isFinished}
             initialState={initialState}
             finalState={finalState}
-            onChangeState={() => setIsBlurred(false)}
+            onChangeState={handleChangeState}
         >
             <Wrapper isBlurred={isBlurred}>
                 <BowlGame onClick={handleFindBowl}/>

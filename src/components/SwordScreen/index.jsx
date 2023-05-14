@@ -6,6 +6,7 @@ import elementBg from '../../assets/images/gameProgressElement.svg';
 import background from '../../assets/images/swordGameBg.png';
 import { SwordRock } from './SwordRock';
 import { FINAL_COUNT } from './sword-screen-constants';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -77,6 +78,7 @@ export const SwordScreen = () => {
     };
 
     const handleChangeState = () => {
+        reachMetrikaGoal('start1');
         setIsBlurred(blurred => !blurred);
     };
 
@@ -102,6 +104,7 @@ export const SwordScreen = () => {
             initialState={initialState}
             finalState={finalState}
             onChangeState={handleChangeState}
+            finishMetrika={'vstupit'}
         >
             <Wrapper isBlurred={isBlurred}>
                 <Progress>

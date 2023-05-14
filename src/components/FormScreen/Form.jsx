@@ -116,7 +116,7 @@ export const Form = ({onSubmit}) => {
     const [company, setCompany] = useState('');
     const [position, setPosition] = useState('');
     const [isParking, setIsParking] = useState(undefined);
-    const [opts, setOpts] = useState({mask: '+{7} {(}000{)} 000-00-00'});
+    const [opts] = useState({mask: '+{7} {(}000{)} 000-00-00'});
     const [error, setError] = useState(false);
     const {ref, setValue} = useIMask(opts, {
         onAccept: (value) => setPhone(value),
@@ -133,7 +133,7 @@ export const Form = ({onSubmit}) => {
             setTimeout(() => setError(false), 1000);
             return;
         }
-        onSubmit({name, phone, company, position, email, isParking})
+        onSubmit({name, phone, company, position, email, isParking});
     };
 
     return (

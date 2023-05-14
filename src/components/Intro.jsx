@@ -11,6 +11,7 @@ import { Title } from './shared/Title';
 import { ItalicText, Text } from './shared/Text';
 import { useEffect, useState } from 'react';
 import { Modal } from './shared/Modal';
+import { reachMetrikaGoal } from '../utils/reachMetrikaGoal';
 
 const Wrapper = styled.div`
   display: flex;
@@ -135,6 +136,16 @@ export const Intro = () => {
         }
     }, [isModal]);
 
+    const onVinchesterClick = () => {
+        reachMetrikaGoal('vinchester');
+        setIsModal(true);
+    };
+
+    const onMguClick = () => {
+        reachMetrikaGoal('mgu');
+        next();
+    };
+
     return (
         <>
             <Wrapper isBlurred={isModal}>
@@ -179,8 +190,8 @@ export const Intro = () => {
                         }
                     </Question>
                     <ButtonWrapper>
-                        <ButtonStyled onClick={() => setIsModal(true)}>Винчестер, Англия</ButtonStyled>
-                        <Button onClick={next}>ЭФ МГУ, Москва</Button>
+                        <ButtonStyled onClick={onVinchesterClick}>Винчестер, Англия</ButtonStyled>
+                        <Button onClick={onMguClick}>ЭФ МГУ, Москва</Button>
                     </ButtonWrapper>
                 </PaperWrapper>
             </Wrapper>

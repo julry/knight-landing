@@ -7,6 +7,7 @@ import { useScreen } from '../hooks/useScreen';
 import { Button } from './shared/Button';
 import { ItalicText } from './shared/Text';
 import { FullHeightScreen } from './shared/FullHeightScreen';
+import { reachMetrikaGoal } from '../utils/reachMetrikaGoal';
 
 const Wrapper = styled(FullHeightScreen)`
   padding-top: 10px;
@@ -39,14 +40,24 @@ export const ChooseScreen = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const handleOpenTg = () => {
+        reachMetrikaGoal('tg1');
+        openTg();
+    };
+
+    const handleNext = () => {
+        reachMetrikaGoal('continue');
+        next();
+    };
+
     return (
         <Wrapper>
             <Content>
                 <TitleStyled>
                     {'Ты можешь\nостановиться тут\nили продолжить\nсвой путь.'}
                 </TitleStyled>
-                <ButtonStyled onClick={openTg}>Остановиться</ButtonStyled>
-                <ButtonStyled onClick={next}>Продолжить путь</ButtonStyled>
+                <ButtonStyled onClick={handleOpenTg}>Остановиться</ButtonStyled>
+                <ButtonStyled onClick={handleNext}>Продолжить путь</ButtonStyled>
                 <ItalicText>{'*чтобы найти послание\nот организаторов Круглого стола'}</ItalicText>
             </Content>
         </Wrapper>

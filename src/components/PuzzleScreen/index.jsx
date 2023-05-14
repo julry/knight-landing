@@ -10,6 +10,7 @@ import { GameScreen } from '../shared/GameScreen';
 import { PuzzlesRow } from './PuzzlesRow';
 import { Board } from './Board';
 import { usePuzzleGame } from './use-puzzle-game';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -70,8 +71,18 @@ export const PuzzleScreen = () => {
         btnText: 'Начать'
     };
 
+    const handleChangeState = () => {
+        reachMetrikaGoal('start2');
+        setIsBlurred(false)
+    };
+
+    const handleComplete = () => {
+        reachMetrikaGoal('tg2');
+        openTg();
+    };
+
     return (
-        <GameScreen initialState={initialState} onChangeState={() => setIsBlurred(false)}>
+        <GameScreen initialState={initialState} onChangeState={handleChangeState}>
             <Wrapper isBlurred={isBlurred}>
                 <DndProvider options={HTML5toTouch}>
                     <Board
@@ -80,7 +91,7 @@ export const PuzzleScreen = () => {
                         onPuzzleDrop={onDrop}
                         droppedPuzzles={droppedPuzzles}
                     />
-                    {isWin ? <ButtonStyled onClick={openTg}>Завершить</ButtonStyled>
+                    {isWin ? <ButtonStyled onClick={handleComplete}>Завершить</ButtonStyled>
                         : <PuzzlesRow
                             shownPuzzles={shownPuzzles}
                             onDrop={onRemove}

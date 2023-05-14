@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useScreen } from '../../hooks/useScreen';
 import { Modal } from './Modal';
 import { FullHeightScreen } from './FullHeightScreen';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
-export const GameScreen = ({initialState, finalState, children, onChangeState, isFinished, className}) => {
+export const GameScreen = ({initialState, finalState, children, onChangeState, isFinished, className, finishMetrika}) => {
     const [modalState, setModalState] = useState({open: true, ...initialState});
     const {next} = useScreen();
 
@@ -20,6 +21,7 @@ export const GameScreen = ({initialState, finalState, children, onChangeState, i
     const handleClick = () => {
         if (isFinished) {
             next();
+            if (finishMetrika) reachMetrikaGoal(finishMetrika);
             return;
         }
         onStart();

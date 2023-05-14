@@ -1,10 +1,10 @@
-const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdldBTA5l9d3GhRXKsis5PtgyljpLfGRbYe2BbNmzMHlOZaMg/formResponse';
-const NAME_ID = 'entry.1936583718';
-const PHONE_ID = 'entry.893457390';
-const EMAIL_ID = 'entry.939629556';
-const COMPANY_ID = 'entry.1620009123';
-const POSITION_ID = 'entry.1181269117';
-const PARKING_ID = 'entry.1537445244';
+const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLScl3sDF-2v4gnsr8AzlvnbVMF0LywnoBr42xAzGRvncL_dPuQ/formResponse';
+const NAME_ID = 'entry.637590343';
+const PHONE_ID = 'entry.1483328622';
+const EMAIL_ID = 'entry.1706231110';
+const COMPANY_ID = 'entry.1045433932';
+const POSITION_ID = 'entry.56442107';
+const PARKING_ID = 'entry.219778571';
 
 export const sendForm = ({name, phone, company, position, email, isParking}) => {
     const formData = new FormData();

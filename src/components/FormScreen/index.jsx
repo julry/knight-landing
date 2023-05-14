@@ -4,6 +4,7 @@ import { useScreen } from '../../hooks/useScreen';
 import { Title } from '../shared/Title';
 import { sendForm } from './sendForm';
 import { Form } from './Form';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const TitleStyled = styled(Title)`
   margin: 40px 0;
@@ -32,6 +33,7 @@ const ImageWrapper = styled.div`
 const Image = styled.img`
   object-fit: contain;
   height: 100%;
+  
   @media screen and (min-width: 400px) {
     height: auto;
     width: 100%;
@@ -43,6 +45,7 @@ export const FormScreen = () => {
 
     const onSubmit = async ({name, phone, company, position, email, isParking}) => {
         await sendForm({name, phone, company, position, email, isParking});
+        reachMetrikaGoal('submit');
         next();
     };
 
