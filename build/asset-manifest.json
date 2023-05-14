@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ed8c2a4c.css",
-    "main.js": "./static/js/main.f981fc68.js",
+    "main.js": "./static/js/main.f06a85e1.js",
     "static/media/fullPuzzleBoard.svg": "./static/media/fullPuzzleBoard.6738f85d55fa8892d4e3ce5ed9715799.svg",
     "static/media/rightBotPuzzle.svg": "./static/media/rightBotPuzzle.39a2f098c4f9b1ca88c00184ee9c7a02.svg",
     "static/media/backgroundIntro.png": "./static/media/backgroundIntro.7009914c915c9cca9bc6.png",
@@ -21,7 +21,7 @@
     "static/media/buttonLgGray.svg": "./static/media/buttonLgGray.04bf205d51b3e689193611fcde5a2597.svg",
     "static/media/bricks.svg": "./static/media/bricks.c59778cfdabbe6f0178a0df31914206a.svg",
     "static/media/table.svg": "./static/media/table.42ee078fb045e9d2c16572816c059d81.svg",
-    "static/media/formBg.svg": "./static/media/formBg.cb90e8cfafeef5f7702aacb4ae0fd9b7.svg",
+    "static/media/formBg.svg": "./static/media/formBg.9be5dabc113a82a5263007690c5c9a23.svg",
     "static/media/scrollIntro.svg": "./static/media/scrollIntro.21862144b2f29df50fbd19a963e8836d.svg",
     "static/media/logo.svg": "./static/media/logo.9f64ce7c709b41a3eaa2dbbce0e2d972.svg",
     "static/media/gameProgressElement.svg": "./static/media/gameProgressElement.e427085fcba2e61a5156fbe99ca55eff.svg",
@@ -33,10 +33,10 @@
     "index.html": "./index.html",
     "static/media/closeIcon.svg": "./static/media/closeIcon.791d87585d85f9afb07bfed287371545.svg",
     "main.ed8c2a4c.css.map": "./static/css/main.ed8c2a4c.css.map",
-    "main.f981fc68.js.map": "./static/js/main.f981fc68.js.map"
+    "main.f06a85e1.js.map": "./static/js/main.f06a85e1.js.map"
   },
   "entrypoints": [
     "static/css/main.ed8c2a4c.css",
-    "static/js/main.f981fc68.js"
+    "static/js/main.f06a85e1.js"
   ]
 }
